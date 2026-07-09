@@ -14,42 +14,59 @@ window.addEventListener("load", () => {
 });
 
 
-// =========================
-// Relationship Timer
-// =========================
+// ===========================
+// Premium Love Counter
+// ===========================
 
-const startDate = new Date("January 10, 2026 00:00:00");
+const relationshipDate = new Date("2026-01-10T00:00:00");
 
-function updateTimer(){
+function updateLoveCounter(){
 
-    const now = new Date();
+const now = new Date();
 
-    let diff = now - startDate;
+let years = now.getFullYear() - relationshipDate.getFullYear();
+let months = now.getMonth() - relationshipDate.getMonth();
+let days = now.getDate() - relationshipDate.getDate();
 
-    if(diff < 0){
-        diff = 0;
-    }
+if(days < 0){
+    months--;
+    const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+    days += previousMonth.getDate();
+}
 
-    const totalMinutes = Math.floor(diff / 60000);
-    const totalHours = Math.floor(diff / 3600000);
-    const totalDays = Math.floor(diff / 86400000);
+if(months < 0){
+    years--;
+    months += 12;
+}
 
-    const months = Math.floor(totalDays / 30);
-    const days = totalDays % 30;
-    const hours = totalHours % 24;
-    const minutes = totalMinutes % 60;
+document.getElementById("years").textContent = years;
+document.getElementById("months").textContent = months;
+document.getElementById("days").textContent = days;
+document.getElementById("hours").textContent = now.getHours();
+document.getElementById("minutes").textContent = now.getMinutes();
+document.getElementById("seconds").textContent = now.getSeconds();
 
-    document.getElementById("months").textContent = months;
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
+let nextAnniversary = new Date(now.getFullYear(),0,10);
+
+if(now > nextAnniversary){
+    nextAnniversary = new Date(now.getFullYear()+1,0,10);
+}
+
+const diff = nextAnniversary - now;
+
+const d = Math.floor(diff/(1000*60*60*24));
+const h = Math.floor(diff/(1000*60*60))%24;
+const m = Math.floor(diff/(1000*60))%60;
+const s = Math.floor(diff/1000)%60;
+
+document.getElementById("anniversaryCountdown").innerHTML =
+`${d} Days ${h} Hours ${m} Minutes ${s} Seconds`;
 
 }
 
-updateTimer();
+setInterval(updateLoveCounter,1000);
 
-setInterval(updateTimer,60000);
-
+updateLoveCounter();
 
 // =========================
 // Background Music
