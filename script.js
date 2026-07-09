@@ -212,3 +212,77 @@ envelope.addEventListener("click", () => {
     }, 1800);
 
 });
+
+// ===========================
+// Typewriter Love Letter
+// ===========================
+
+const message = `
+
+Dear Ratri,
+
+Happy 6 Months, my love. ❤️
+
+If someone had told me that one person could bring so much happiness into my life, I probably wouldn't have believed them.
+
+But then I met you.
+
+Thank you for every smile, every laugh, every late-night conversation, every tiny moment that became a beautiful memory.
+
+You make ordinary days feel special.
+
+You make my heart feel at home.
+
+No matter how much time passes, I promise I'll always choose you, support you, and stand beside you.
+
+Here's to six amazing months...
+
+...and to every month, every year, and every memory we'll create together.
+
+I love you more than words can ever describe.
+
+Happy Anniversary, Princess. ❤️
+
+`;
+
+const typingTarget = document.getElementById("typewriter");
+
+let i = 0;
+
+function typeLetter(){
+
+if(i < message.length){
+
+typingTarget.innerHTML += message.charAt(i);
+
+i++;
+
+setTimeout(typeLetter,40);
+
+}else{
+
+document.querySelector(".signature").style.opacity = "1";
+
+}
+
+}
+
+const letterObserver = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+if(i===0){
+
+typeLetter();
+
+}
+
+}
+
+});
+
+});
+
+letterObserver.observe(document.querySelector(".love-letter"));
