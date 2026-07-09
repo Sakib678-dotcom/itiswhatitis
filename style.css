@@ -539,3 +539,89 @@ padding:70px 6%;
     pointer-events:none;
 
 }
+
+/* ==========================
+      Premium Counter
+========================== */
+
+.loveCounter{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+.timeCard{
+
+background:rgba(255,255,255,.55);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+padding:25px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+transition:.4s;
+
+}
+
+.timeCard:hover{
+
+transform:translateY(-8px) scale(1.05);
+
+}
+
+.timeCard span{
+
+display:block;
+
+font-size:2.6rem;
+
+font-weight:bold;
+
+color:#ff3f82;
+
+}
+
+.timeCard small{
+
+font-size:15px;
+
+color:#666;
+
+}
+
+#timer h3{
+
+margin-top:10px;
+
+color:#ff5b96;
+
+}
+
+.nextAnniversary{
+
+margin-top:50px;
+
+text-align:center;
+
+}
+
+.nextAnniversary p{
+
+font-size:1.3rem;
+
+font-weight:600;
+
+color:#ff2d73;
+
+margin-top:15px;
+
+}
