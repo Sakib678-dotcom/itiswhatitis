@@ -233,13 +233,17 @@ You make ordinary days feel special.
 
 You make my heart feel at home.
 
-No matter how much time passes, I promise I'll always choose you, support you, and stand beside you.
+No matter how much time passes, I promise I'll always be with you, support you, and stand beside you.
 
-Here's to six amazing months...
+Your precious smile is the best memory of these 6 months and one of the best of my life 
+
+Here's to six amazing months meri jaan...
 
 ...and to every month, every year, and every memory we'll create together.
 
 I love you more than words can ever describe.
+
+May together we grow older and love forever🫶🫶🫶
 
 Happy Anniversary, Princess. ❤️
 
