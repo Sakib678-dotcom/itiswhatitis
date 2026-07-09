@@ -171,3 +171,27 @@ document.querySelectorAll("section").forEach(section=>{
     observer.observe(section);
 
 });
+
+
+// Romantic Intro
+
+const intro = document.getElementById("intro");
+const envelope = document.getElementById("openEnvelope");
+
+envelope.addEventListener("click", () => {
+
+    envelope.classList.add("open");
+
+    setTimeout(() => {
+
+        intro.classList.add("hideIntro");
+
+        document.getElementById("bgMusic").play();
+
+        playing = true;
+
+        musicBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+
+    }, 1800);
+
+});
